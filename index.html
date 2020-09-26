@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokeDex</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>PokeDex</h1>
+    <input type="button" value="Refresh" onclick="refresh()" /><br />
+    <input
+      id="searchBarName"
+      pattern="[A-Za-z]"
+      onkeypress="return (event.charCode > 64 && 
+event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"
+      maxlength="20"
+      onkeypress="searchPokemonByName(event)"
+      type="text"
+      name="search"
+      placeholder="Search Pokemon By Name"
+    />
+    <input
+      type="button"
+      value="Search By Name"
+      onclick="searchPokemonByName(event)"
+    /><br />
+    <input
+      max="20"
+      id="searchBarNumber"
+      type="number"
+      placeholder="Search Pokemon By Number"
+    />
+    <input
+      type="button"
+      value="Search By Number"
+      onclick="searchPokemonByNumber(event)"
+    />
+    <div id="poke_container" class="poke-container"></div>
+    <script src="main.js"></script>
+  </body>
+</html>
